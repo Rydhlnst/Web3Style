@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, Geist, Geist_Mono, Teko } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,8 +7,20 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const bebasNeue = Bebas_Neue({
+  weight: ["400"],
+  variable: "--font-bebas-neue",
+  subsets: ["latin"],
+})
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const teko = Teko({
+  variable: "--font-teko",
+  weight: ["400", "300", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -25,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${teko.variable} antialiased`}
       >
         {children}
       </body>
